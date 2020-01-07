@@ -8,5 +8,6 @@
 
 using namespace Eigen;
 
+#include "text_interpreter.h"
 #include "neural_network_generator.h"
 #include "trainer.h"

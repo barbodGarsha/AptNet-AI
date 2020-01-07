@@ -141,12 +141,14 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="neural_network_generator.cpp" />
+    <ClCompile Include="text_interpreter.cpp" />
     <ClCompile Include="trainer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AptNet.h" />
     <ClInclude Include="neural_network_generator.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="text_interpreter.h" />
     <ClInclude Include="trainer.h" />
   </ItemGroup>
   <ItemGroup>
