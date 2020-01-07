@@ -13,7 +13,7 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="AptNet">
+    <Filter Include="Source Files\AptNet">
       <UniqueIdentifier>{94f50e5a-d67e-4930-88d9-8c6dc76f1cb9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -22,21 +22,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="neural_network_generator.cpp">
-      <Filter>AptNet</Filter>
+      <Filter>Source Files\AptNet</Filter>
     </ClCompile>
     <ClCompile Include="trainer.cpp">
-      <Filter>AptNet</Filter>
+      <Filter>Source Files\AptNet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="neural_network_generator.h">
-      <Filter>AptNet</Filter>
+      <Filter>Source Files\AptNet</Filter>
     </ClInclude>
     <ClInclude Include="AptNet.h">
-      <Filter>AptNet</Filter>
+      <Filter>Source Files\AptNet</Filter>
     </ClInclude>
     <ClInclude Include="trainer.h">
-      <Filter>AptNet</Filter>
+      <Filter>Source Files\AptNet</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
