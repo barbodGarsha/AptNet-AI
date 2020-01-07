@@ -139,6 +139,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="neural_network_generator.cpp" />
+    <ClCompile Include="trainer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AptNet.h" />
+    <ClInclude Include="neural_network_generator.h" />
+    <ClInclude Include="trainer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
