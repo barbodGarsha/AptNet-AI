@@ -27,10 +27,20 @@ public:
 	*/
 	int is_ready();
 
-private:
-	//TODO1 : is_ready (for now it's always ready lol)
-	int ready = 1;
+	// get functions
+	// TODO2 : if it's needed we use them
+	/*int get_input_index();
+	int* get_hidden_index();
+	int get_output_index();
 
+	MatrixXf get_input_values();
+	MatrixXf* get_hidden_values();
+	MatrixXf get_output_values();
+
+	uint32_t get_training_samples_n();*/
+
+	//--------------------------------
+	//TODO2 : these might need to be private
 	int input_index;
 	int* hidden_index;
 	int output_index;
@@ -51,7 +61,10 @@ private:
 
 	MatrixXf* weights;
 	MatrixXf* biases;
-
+	//----------------------------
+private:
+	//TODO1 : is_ready (for now it's always ready lol)
+	int ready = 1;
 
 	void generate_weights();
 	void generate_biases();
