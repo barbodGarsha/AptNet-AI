@@ -1,6 +1,22 @@
 #include "AptNet.h"
 
 // TODO: handle errors NOTE: later with error_handler.cpp/.h
+/*
+	Input Layer |  Hidden Layer | Output Layer
+				|				|
+				|    *	   *	|
+		*		|    *	   *	|	* ----> each '*' represents a Neuron in our Neural Network
+		*		|    *	   *	|	*
+				|    *	   *	|
+
+	a layer scheme structure is like : "I,H1,H2,...,Hn,O"
+	- I is the number of Nuerons in the Input Layer
+	- Hx is the number of Neurons in the Hidden Layer number x (you can have as many as you want
+	- O in the number of Neurons in the Output Layer
+	the layer scheme which makes the Neural Network up there looks like this : "2,4,4,5"
+	
+	NeuralNet::NeuralNet(std::string layer_scheme) reads the layer_scheme and creates the Neural Network.
+*/
 NeuralNet::NeuralNet(std::string layer_scheme)
 {
 	int n = scheme_index_counter(layer_scheme);
