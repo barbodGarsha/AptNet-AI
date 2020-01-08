@@ -84,6 +84,17 @@ void NeuralNet::set_inputs(MatrixXf inputs)
 	}
 }
 
+// sets the training samples for training
+void NeuralNet::set_training_samples(TrainingSmaple samples[], int size)
+{	// TODO1: check the samples
+	training_samples_n = size;
+	training_samples = new TrainingSmaple[size];
+	for (int i = 0; i < size; i++)
+	{
+		training_samples[i] = samples[i];
+	}
+}
+
 /*
 	does the feedforward in Neural Network.
 	TODO1 : some commenting needs to be done here
@@ -181,4 +192,13 @@ void NeuralNet::generate_biases()
 		biases[i] = MatrixXf::Random(1, hidden_index[i]);
 	}
 	biases[hidden_layers_len] = MatrixXf::Random(1, output_index);
+}
+
+/*
+	TODO1 : is_ready it need to get fixed but we go with it for now
+*/
+int NeuralNet::is_ready()
+{
+	if (ready) { return 1; }
+	return 0;
 }
