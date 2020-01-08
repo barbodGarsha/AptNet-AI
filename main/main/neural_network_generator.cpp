@@ -41,6 +41,28 @@ NeuralNet::NeuralNet(std::string layer_scheme)
 
 NeuralNet::NeuralNet() {}
 
+//TO DO2: the whole activation functions system needs to e rewritten but for now it works and we go with it
+void NeuralNet::set_activations_funtions(std::string activation_functions_scheme)
+{
+	activations_functions = new int[hidden_layers_len + 1];
+	std::string num = "";
+	for (int j = 0; j < hidden_layers_len + 1; j++)
+	{
+		num = "";
+		for (uint16_t i = 0; i < activation_functions_scheme.length(); i++)
+		{
+			if (activation_functions_scheme[i] == ',')
+			{
+				activations_functions[j] = std::stoi(num);
+				activation_functions_scheme[i] = ' ';
+				break;
+			}
+			num += activation_functions_scheme[i];
+			activation_functions_scheme[i] = ' ';
+		}
+	}
+}
+
 /* here an array of MatrixXf will be defined which will contain the values of all the weights in our Neural Network.
    every Matrix in this array is defined given to the amount of neurons in each layer
    the amount of neurons are stored in:

@@ -6,6 +6,8 @@ public:
 	
 	NeuralNet(std::string layers_scheme);
 	NeuralNet();
+
+	void set_activations_funtions(std::string activation_functions_scheme);
 	
 private:
 	int input_index;
