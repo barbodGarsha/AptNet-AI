@@ -1,5 +1,16 @@
 #include "AptNet.h"
 
+
+void add_biases(MatrixXf& x, MatrixXf biases)
+{
+	for (int i = 0; i < x.cols(); i++)
+	{
+		x(0, i) += biases(0, i);
+	}
+}
+
+//---------------------------------------------------------------------------------
+
 // TODO: handle errors NOTE: later with error_handler.cpp/.h
 /*
 	Input Layer |  Hidden Layer | Output Layer
@@ -41,7 +52,7 @@ NeuralNet::NeuralNet(std::string layer_scheme)
 
 NeuralNet::NeuralNet() {}
 
-//TO DO2: the whole activation functions system needs to e rewritten but for now it works and we go with it
+//TODO2: the whole activation functions system needs to e rewritten but for now it works and we go with it
 void NeuralNet::set_activations_funtions(std::string activation_functions_scheme)
 {
 	activations_functions = new int[hidden_layers_len + 1];
@@ -60,6 +71,61 @@ void NeuralNet::set_activations_funtions(std::string activation_functions_scheme
 			num += activation_functions_scheme[i];
 			activation_functions_scheme[i] = ' ';
 		}
+	}
+}
+
+//sets values in the Input Layer
+//TODO3: Error Handling
+void NeuralNet::set_inputs(MatrixXf inputs)
+{
+	if (input_index == inputs.cols())
+	{
+		input_values = inputs;
+	}
+}
+
+/*
+	does the feedforward in Neural Network.
+	TODO1 : some commenting needs to be done here
+	TODO3 : it need to be checked if it can be optimized
+*/
+void NeuralNet::feedforward()
+{
+	if (hidden_layers_len != 0)
+	{
+
+		hidden_values[0] = input_values * weights[0];
+		add_biases(hidden_values[0], biases[0]);
+		raw_values[0] = hidden_values[0];
+		activation_f::apply_activation_f(hidden_values[0], activations_functions[0]);
+		if (hidden_layers_len > 1)
+		{
+			for (int i = 1; i < hidden_layers_len; i++)
+			{
+				hidden_values[i] = hidden_values[i - 1] * weights[i];
+				add_biases(hidden_values[i], biases[i]);
+				raw_values[i] = hidden_values[i];
+				activation_f::apply_activation_f(hidden_values[i], activations_functions[i]);
+			}
+			output_values = hidden_values[hidden_layers_len - 1] * weights[hidden_layers_len];
+			add_biases(output_values, biases[hidden_layers_len]);
+			raw_values[hidden_layers_len] = output_values;
+			activation_f::apply_activation_f(output_values, activations_functions[hidden_layers_len]);
+		}
+		else
+		{
+			output_values = hidden_values[0] * weights[1];
+			add_biases(output_values, biases[1]);
+			raw_values[1] = output_values;
+			activation_f::apply_activation_f(output_values, activations_functions[1]);
+		}
+	}
+	else
+	{
+		output_values = input_values * weights[0];
+		add_biases(output_values, biases[0]);
+		raw_values[0] = output_values;
+		activation_f::apply_activation_f(output_values, activations_functions[0]);
 	}
 }
 

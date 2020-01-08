@@ -1,6 +1,6 @@
 #include "AptNet.h"
 
-//TO DO2: these functions work but we need to be able to aplly different activation functions to each layer
+//TODO2: these functions work but we need to be able to aplly different activation functions to each layer
 //		  these functions also need to get optimized but they work for now
 
 //... Sigmoid ...........................................................................................

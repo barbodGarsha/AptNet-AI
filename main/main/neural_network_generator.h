@@ -9,6 +9,10 @@ public:
 
 	void set_activations_funtions(std::string activation_functions_scheme);
 	
+	void set_inputs(MatrixXf inputs);
+	
+	void feedforward();
+
 private:
 	int input_index;
 	int* hidden_index;
