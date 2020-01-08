@@ -139,12 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="activation_functions.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="neural_network_generator.cpp" />
     <ClCompile Include="text_interpreter.cpp" />
     <ClCompile Include="trainer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="activation_functions.h" />
     <ClInclude Include="AptNet.h" />
     <ClInclude Include="neural_network_generator.h" />
     <ClInclude Include="resource.h" />

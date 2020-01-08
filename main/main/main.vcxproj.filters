@@ -30,6 +30,9 @@
     <ClCompile Include="text_interpreter.cpp">
       <Filter>Source Files\AptNet</Filter>
     </ClCompile>
+    <ClCompile Include="activation_functions.cpp">
+      <Filter>Source Files\AptNet</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="neural_network_generator.h">
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="text_interpreter.h">
+      <Filter>Source Files\AptNet</Filter>
+    </ClInclude>
+    <ClInclude Include="activation_functions.h">
       <Filter>Source Files\AptNet</Filter>
     </ClInclude>
   </ItemGroup>
