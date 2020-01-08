@@ -5,8 +5,22 @@ NeuralNet::NeuralNet(std::string layer_scheme)
 {
 	//TO DO1: setting the setup values with layer_scheme - they are needed in generate_weights() and generate_biases()
 
- 	generate_weights();
+	int n = scheme_index_counter(layer_scheme);
+	hidden_layers_len = n - 2;
+	int counter = 0;
+	hidden_index = new int[hidden_layers_len];
+	input_index = read_scheme_index(layer_scheme, &counter);
+	for (int i = 0; i < hidden_layers_len; i++)
+	{
+		hidden_index[i] = read_scheme_index(layer_scheme, &counter);
+	}
+	output_index = read_scheme_index(layer_scheme, &counter);
+	hidden_values = new MatrixXf[hidden_layers_len];
+
+	generate_weights();
 	generate_biases();
+
+
 
 	raw_values = new MatrixXf[hidden_layers_len + 1];
 }
