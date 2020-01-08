@@ -203,18 +203,19 @@ int NeuralNet::is_ready()
 	return 0;
 }
 
-// get functions 
-// TODO2 : if it's needed we use them
-//int NeuralNet::get_input_index() { return input_index; }
-//
-//int* NeuralNet::get_hidden_index() { return hidden_index; }
-//
-//int NeuralNet::get_output_index() { return output_index; }
-//
-//MatrixXf NeuralNet::get_input_values() { return input_values; }
-//
-//MatrixXf* NeuralNet::get_hidden_values() { return hidden_values; }
-//
-//MatrixXf NeuralNet::get_output_values() { return output_values; }
-//
-//uint32_t NeuralNet::get_training_samples_n() { return training_samples_n; }
+/* get functions 
+ TODO2 : if it's needed we use them
+int NeuralNet::get_input_index() { return input_index; }
+
+int* NeuralNet::get_hidden_index() { return hidden_index; }
+
+int NeuralNet::get_output_index() { return output_index; }
+
+MatrixXf NeuralNet::get_input_values() { return input_values; }
+
+MatrixXf* NeuralNet::get_hidden_values() { return hidden_values; }
+
+MatrixXf NeuralNet::get_output_values() { return output_values; }
+
+uint32_t NeuralNet::get_training_samples_n() { return training_samples_n; }
+*/

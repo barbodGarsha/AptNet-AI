@@ -27,9 +27,10 @@ public:
 	*/
 	int is_ready();
 
-	// get functions
-	// TODO2 : if it's needed we use them
-	/*int get_input_index();
+	/*
+	get functions
+	TODO2 : if it's needed we use them
+	int get_input_index();
 	int* get_hidden_index();
 	int get_output_index();
 
