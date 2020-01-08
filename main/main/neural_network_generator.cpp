@@ -3,8 +3,6 @@
 // TODO: handle errors NOTE: later with error_handler.cpp/.h
 NeuralNet::NeuralNet(std::string layer_scheme)
 {
-	//TO DO1: setting the setup values with layer_scheme - they are needed in generate_weights() and generate_biases()
-
 	int n = scheme_index_counter(layer_scheme);
 	hidden_layers_len = n - 2;
 	int counter = 0;
